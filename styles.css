@@ -1,0 +1,94 @@
+/* styles apply to the entire page */
+body {
+  font-family: Arial, sans-serif;     /* Sets the default font for the whole page */
+  font-size: 16px;                    /* Base font size for all text */
+  margin: 0;                          /* Removes default browser margin */
+  padding: 0;                         /* Removes default browser padding */
+  background-color: #e7e6e6;          /* Light grey background colour */
+}
+
+/*Root variables */
+:root {
+--main-color: dodgerblue; /*variables to reuse */
+--margin: 20px; /*variables to reuse */
+
+}
+
+/* Navigation bar container */
+nav {
+  background-color: var(--main-color); /* Exeuction of root var */
+}
+
+/* Navigation list */ 
+nav ul {
+  list-style-type: none;              /* Removes bullet points */
+  margin: 0;                          /* Removes default margin */
+  padding: 0;                         /* Removes default padding */
+  display: flex;                      /* Activates Flexbox to align list items in a row */
+  flex-direction: row;
+  justify-content: center;            /* Horizontal alignment: Centers items along the main axis */
+  align-items: center;                /* Vertical alignment: Centers items along the cross axis */
+  font-weight: bold;                  
+}
+
+/* Navigation links */
+nav a {
+  display: block;                     /* Makes the link fill its clickable area */
+  color: rgb(6, 1, 5);                       
+  padding: 14px 20px;                 /* Adds space inside the link */
+  text-decoration: none;              /* Removes underline from links */
+}
+
+/* Navigation link hover effect */
+nav a:hover {
+  background-color: #f9feff;          /* Changes background when hovered */
+}
+
+/* Main page heading */
+h1 {
+  color: #333;                        /* Dark grey text colour */
+  text-align: center;                 /* Centres the heading text */
+  margin-top: 20px;                   /* Adds space above the heading */
+  background-color: rgb(205, 238, 156); 
+}
+
+/* Paragraph text */
+p {
+  font-size: 16px;                    /* Sets paragraph font size */
+  line-height: 1.6;                   /* Improves readability with line spacing */
+  margin: var(--margin);              /* Adds space around paragraphs */
+}
+
+/* Images */
+img {
+  display: block;                     /* Treats image as a block element */
+  margin-left: auto;                  /* Centres image horizontally */
+  margin-right: auto;                 /* Centres image horizontally */
+  width: 50%;                         /* Image takes up half the container width */
+}
+
+/* Unordered lists (outside nav) */
+ul {
+  margin: var(--margin);                         /* Adds space around lists */
+}
+
+/* Point 10: Responsiveness for mobile screens (max 600px) */
+@media screen and (max-width: 600px) {
+  
+  nav ul {
+    /* Changes the horizontal row into a vertical stack for mobile */
+    flex-direction: column;
+  }
+
+  nav a {
+    /* Ensures the links are centered and easier to tap on a phone */
+    text-align: center;
+    width: 100%;
+    padding: 15px 0; /* Provides a larger touch area for thumbs */
+  }
+
+  img {
+    /* Increases image size on small screens for better visibility */
+    width: 90%;
+  }
+}
